@@ -37,3 +37,6 @@ Route::post('/brands/update/{id}',[BrandController::class,'update'])->name('bran
 Route::get('/brands/delete/{id}',[BrandController::class,'destroy'])->name('brands.delete');
 Route::get('/brands/images',[BrandController::class,'AllImages'])->name('brands.images');
 Route::post('/brands/addimages',[BrandController::class,'storeImages'])->name('brands.storeimages');
+
+// user logout 
+Route::get('/user/logout',[BrandController::class,'Logout'])->name('user.logout');

@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use ParagonIE\ConstantTime\Hex;
 use Image;
+use Illuminate\Support\Facades\Auth;
 
 class BrandController extends Controller
 {
@@ -15,11 +16,12 @@ class BrandController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function Logout(){
+       Auth::logout();
+       return redirect()->route('login');
+    }
+    
     public function index()
     {
         $brands = Brand::latest()->paginate(5);

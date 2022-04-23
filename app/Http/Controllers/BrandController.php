@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\MultiImage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use ParagonIE\ConstantTime\Hex;
@@ -10,6 +11,10 @@ use Image;
 
 class BrandController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -150,4 +155,33 @@ class BrandController extends Controller
         return redirect()->route('brands')->with('success','Brand Deleted Successfully');
 
     }
+
+    public function AllImages()
+    {
+        $BrandImages = MultiImage::all();
+
+        return view('admin.multimages.index',compact('BrandImages'));
+    }
+     public function storeImages(Request $request)
+     {
+
+        $image = $request->file('image');
+
+        foreach($image as $multi){
+
+        $name_gen = hexdec(uniqid()). '.' .$multi->getClientOriginalExtension();
+        Image::make($multi)->resize(300,300)->save('images/multimages/'.$name_gen);
+
+        $last_image = 'images/multimages/'.$name_gen;
+
+
+        MultiImage::insert([
+            'image' => $last_image,
+            'created_at' => Carbon::now(),
+
+        ]);
+            }
+        return redirect()->route('brands')->with('success','Category Careated Successfully');
+
+     }
 }

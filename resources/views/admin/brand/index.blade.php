@@ -1,13 +1,9 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Brands
-        </h2>
-    </x-slot>
+@extends('admin.master')
 
+@section('content')
     <div class="container">
         <div class="row">
-            <div class="col-8 mt-5">
+            <div class="col-8">
                 <div class="card">
                     @if(session()->has('success'))
                         <div class="alert alert-success">
@@ -50,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 mt-5">
+            <div class="col-4">
                 <div class="card">
                     <div class="card-header">
                       Add Brand 
@@ -92,5 +88,4 @@
         </div>
     </div>
 
-  
-</x-app-layout>
+@endsection

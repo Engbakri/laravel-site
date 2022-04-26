@@ -10,7 +10,7 @@
 
         @foreach ($sliders as $index=>$slider)
         
-          <div class="carousel-item {{ $index == 0 ? 'active' : ' '}} " style="background-image: url({{ $slider->image}})">
+          <div class="carousel-item {{ $index == 0 ? 'active' : ' '}} " style="background-image: url({{ asset($slider->image)}})">
             <div class="carousel-container">
               <div class="carousel-content animate__animated animate__fadeInUp">
                 <h2> {{ $slider->title}}</h2>

@@ -47,13 +47,13 @@
                         </a>
                       </li>
                       <li  class="active" >
-                        <a class="sidenav-item-link" href="index.html">
+                        <a class="sidenav-item-link" href="{{ route('abouts')}}">
                           <span class="nav-text">About</span>
                           
                         </a>
                       </li>
                       <li  class="active" >
-                        <a class="sidenav-item-link" href="index.html">
+                        <a class="sidenav-item-link" href="{{ route('brands.images')}}">
                           <span class="nav-text">Portofolio</span>
                           
                         </a>

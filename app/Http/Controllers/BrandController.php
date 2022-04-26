@@ -86,7 +86,9 @@ class BrandController extends Controller
      */
     public function show($id)
     {
-        //
+        $brand = MultiImage::find($id);
+
+        return view('admin.brand.show',compact('brand'));
     }
 
     /**

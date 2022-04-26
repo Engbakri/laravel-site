@@ -2,14 +2,18 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Brand;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 
 Route::get('/', function () {
-    return view('home');
+    $brands = DB::table('brands')->get();
+    return view('home',compact('brands'));
 });
 
 Route::middleware([
@@ -40,3 +44,11 @@ Route::post('/brands/addimages',[BrandController::class,'storeImages'])->name('b
 
 // user logout 
 Route::get('/user/logout',[BrandController::class,'Logout'])->name('user.logout');
+
+// Sliders 
+Route::get('/sliders',[HomeController::class,'index'])->name('sliders');
+Route::get('/sliders/create',[HomeController::class,'create'])->name('sliders.create');
+Route::post('/sliders/add',[HomeController::class,'store'])->name('sliders.store');
+Route::get('/sliders/edit/{id}',[HomeController::class,'edit'])->name('sliders.edit');
+Route::post('/sliders/update/{id}',[HomeController::class,'update'])->name('sliders.update');
+Route::get('/sliders/delete/{id}',[HomeController::class,'destroy'])->name('sliders.delete');

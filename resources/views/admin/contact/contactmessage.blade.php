@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                 <a href="{{ route('abouts.create')}}" class="btn btn-primary mb-2">Add About</a>
+               
                 <div class="card">
                     @if(session()->has('success'))
                         <div class="alert alert-success">
@@ -12,29 +12,30 @@
                         </div>
                     @endif
                     <div class="card-header">
-                      About Page 
+                      Contact Message
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
                               <th>ID</th>
-                              <th>Title</th>
-                              <th> Short Description</th>
-                              <th> Long Description</th>
+                              <th>Name</th>
+                              <th>Subject</th>
+                              <th>Email</th>
+                              <th>Message</th>
                               <th>Created at</th>
                               <th>Actions</th>
                             </thead>
                             <tbody>
-                                @foreach ($abouts as $index=>$about)
+                                @foreach ($contacts as $index=>$contact)
                                 <tr>
                                     <td>{{ $index+1 }}</td>
-                                    <td>{{ $about->about_title }}</td>
-                                    <td>{{ \Illuminate\Support\Str::limit($about->short_desc, 20, $end='...') }}</td>
-                                    <td>{{ \Illuminate\Support\Str::limit($about->long_desc, 20, $end='...') }}</td>
-                                    <td>{{ $about->created_at->diffForHumans() }}</td>
+                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->subject }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->message }}</td>
+                                    <td>{{ $contact->created_at->diffForHumans() }}</td>
                                     <td>
-                                        <a href="{{ route('abouts.edit',$about->id)}}" class="btn btn-info">Edit</a>
-                                        <a href="{{ route('abouts.delete',$about->id)}}" class="btn btn-danger" onclick="return confirm('Are you want Detete brand')">Delete</a>
+                                        <a href="{{ route('contactmessage.delete',$contact->id)}}" class="btn btn-danger" onclick="return confirm('Are you want Detete brand')">Delete</a>
                                     </td>
 
                                     </tr>

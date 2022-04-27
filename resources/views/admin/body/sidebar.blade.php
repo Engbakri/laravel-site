@@ -67,16 +67,38 @@
                     </div>
               </ul>
             </li>
-          
 
-          
-
-          
+            <li  class="has-sub" >
+              <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#contacts"
+                aria-expanded="false" aria-controls="contacts">
+                <i class="mdi mdi-view-dashboard-outline"></i>
+                <span class="nav-text">Contacts</span> <b class="caret"></b>
+              </a>
+              <ul  class="collapse"  id="contacts"
+                data-parent="#sidebar-menu">
+                    <div class="sub-menu">    
+                      <li  class="active" >
+                        <a class="sidenav-item-link" href="{{ route('contacts')}}">
+                          <span class="nav-text">Conatcts</span>
+                          
+                        </a>
+                      </li>
+                      <li  class="active" >
+                        <a class="sidenav-item-link" href="{{ route('contactmessage')}}">
+                          <span class="nav-text">Contact Message</span>
+                          
+                        </a>
+                      </li>
+  
+                    </div>
+              </ul>
+            </li>
+        
             <li  class="has-sub" >
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements"
                 aria-expanded="false" aria-controls="ui-elements">
                 <i class="mdi mdi-folder-multiple-outline"></i>
-                <span class="nav-text">UI Elements</span> <b class="caret"></b>
+                <span class="nav-text">Contacts</span> <b class="caret"></b>
               </a>
               <ul  class="collapse"  id="ui-elements"
                 data-parent="#sidebar-menu">
@@ -174,10 +196,7 @@
                       </div>
                     </ul>
                   </li>
-                  
-
-                  
-                  
+                                    
                   <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons"
                       aria-expanded="false" aria-controls="icons">
@@ -197,88 +216,6 @@
                       </div>
                     </ul>
                   </li>
-                  
-
-                  
-                  
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
-                      aria-expanded="false" aria-controls="forms">
-                      <span class="nav-text">Forms</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="forms">
-                      <div class="sub-menu">
-                        
-                        <li >
-                          <a href="basic-input.html">Basic Input</a>
-                        </li>
-                        
-                        <li >
-                          <a href="input-group.html">Input Group</a>
-                        </li>
-                        
-                        <li >
-                          <a href="checkbox-radio.html">Checkbox & Radio</a>
-                        </li>
-                        
-                        <li >
-                          <a href="form-validation.html">Form Validation</a>
-                        </li>
-                        
-                        <li >
-                          <a href="form-advance.html">Form Advance</a>
-                        </li>
-                        
-                      </div>
-                    </ul>
-                  </li>
-                  
-
-                  
-                  
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps"
-                      aria-expanded="false" aria-controls="maps">
-                      <span class="nav-text">Maps</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="maps">
-                      <div class="sub-menu">
-                        
-                        <li >
-                          <a href="google-map.html">Google Map</a>
-                        </li>
-                        
-                        <li >
-                          <a href="vector-map.html">Vector Map</a>
-                        </li>
-                        
-                      </div>
-                    </ul>
-                  </li>
-                  
-
-                  
-                  
-                  <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#widgets"
-                      aria-expanded="false" aria-controls="widgets">
-                      <span class="nav-text">Widgets</span> <b class="caret"></b>
-                    </a>
-                    <ul  class="collapse"  id="widgets">
-                      <div class="sub-menu">
-                        
-                        <li >
-                          <a href="general-widget.html">General Widget</a>
-                        </li>
-                        
-                        <li >
-                          <a href="chart-widget.html">Chart Widget</a>
-                        </li>
-                        
-                      </div>
-                    </ul>
-                  </li>
-                  
 
                   
                 </div>

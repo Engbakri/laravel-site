@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Brand;
 use Illuminate\Support\Facades\DB;
@@ -44,6 +45,10 @@ Route::post('/brands/update/{id}',[BrandController::class,'update'])->name('bran
 Route::get('/brands/delete/{id}',[BrandController::class,'destroy'])->name('brands.delete');
 
 // Portofolio
+Route::get('/portofolio', function () {
+    $portofolio = DB::table('multi_images')->get();
+    return view('admin.brand.portoflo',compact('portofolio'));
+});
 Route::get('/brands/images',[BrandController::class,'AllImages'])->name('brands.images');
 Route::post('/brands/addimages',[BrandController::class,'storeImages'])->name('brands.storeimages');
 Route::get('/brands/show/{id}',[BrandController::class,'show'])->name('brands.show');
@@ -66,3 +71,17 @@ Route::post('/abouts/add',[AboutController::class,'store'])->name('abouts.store'
 Route::get('/abouts/edit/{id}',[AboutController::class,'edit'])->name('abouts.edit');
 Route::post('/abouts/update/{id}',[AboutController::class,'update'])->name('abouts.update');
 Route::get('/abouts/delete/{id}',[AboutController::class,'destroy'])->name('abouts.delete');
+
+// Contact Page
+Route::get('/contacts',[ContactController::class,'index'])->name('contacts');
+Route::get('/contacts/create',[ContactController::class,'create'])->name('contacts.create');
+Route::post('/contacts/add',[ContactController::class,'store'])->name('contacts.store');
+Route::get('/contacts/edit/{id}',[ContactController::class,'edit'])->name('contacts.edit');
+Route::post('/contacts/update/{id}',[ContactController::class,'update'])->name('contacts.update');
+Route::get('/contacts/delete/{id}',[ContactController::class,'destroy'])->name('contacts.delete');
+
+//contact form
+Route::get('/contacts/message',[ContactController::class,'MessageContact'])->name('contactmessage');
+Route::get('/webcontacts',[ContactController::class,'ViewContact'])->name('webcontacts');
+Route::post('/webcontacts/add',[ContactController::class,'contactform'])->name('webcontacts.store');
+Route::get('/webcontacts/delete/{id}',[ContactController::class,'deletemessage'])->name('contactmessage.delete');

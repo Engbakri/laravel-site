@@ -85,3 +85,10 @@ Route::get('/contacts/message',[ContactController::class,'MessageContact'])->nam
 Route::get('/webcontacts',[ContactController::class,'ViewContact'])->name('webcontacts');
 Route::post('/webcontacts/add',[ContactController::class,'contactform'])->name('webcontacts.store');
 Route::get('/webcontacts/delete/{id}',[ContactController::class,'deletemessage'])->name('contactmessage.delete');
+
+
+Route::get('/ser', [ContactController::class, 'Sindex']);
+Route::post('/search', [ContactController::class, 'search'])->name('search');
+
+
+

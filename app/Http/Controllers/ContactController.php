@@ -149,6 +149,19 @@ class ContactController extends Controller
        
     }
 
+
+    public function Sindex(){
+      return view('intro');
+     }
+
+    public function search(Request $request)
+    {
+        
+            $search =  $request->input('search');
+           return view('result',compact('search'));
+          
+    }
+
     
 
 }
